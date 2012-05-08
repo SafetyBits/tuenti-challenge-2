@@ -6,10 +6,10 @@ Almost all my scripts share a common pattern, wich can be easily identified and 
 They are made to run in paralell (one subprocess for each test case), except when there's no significant advantage in doing so (very small test cases, one single test case, shared data...).
 
 For example, this code execute each test in a different core (subproccess). To run each test case sequentially instead:
-`    if __name__ == '__main__':
-        data = parse_input()
-        pool = multiprocessing.Pool(processes=multiprocessing.cpu_count()) # comment this
-        for n, result in enumerate(pool.map(main, data)): # comment this
-        #for n, d in enumerate(data): # uncomment this
-        #    result = main(d) # uncomment this
+`    if __name__ == '__main__':  
+        data = parse_input()  
+        pool = multiprocessing.Pool(processes=multiprocessing.cpu_count()) # comment this  
+        for n, result in enumerate(pool.map(main, data)): # comment this  
+        #for n, d in enumerate(data): # uncomment this  
+        #    result = main(d) # uncomment this  
             print(str(result))`
